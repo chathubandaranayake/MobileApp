@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Library_App"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AuthenticationActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TaskActivity"
+            android:parentActivityName=".AuthenticationActivity">
+            <!-- Define the parent activity for navigation -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AuthenticationActivity" />
+        </activity>
+        <activity android:name=".UpdateActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".AddActivity"
+            android:label="Add Book"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Book Library">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".MainActivity_2"
+            android:exported="true"
+            android:label="Member Details"
+            android:parentActivityName=".TaskActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
